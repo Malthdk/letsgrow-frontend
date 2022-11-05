@@ -1,0 +1,434 @@
+@import './reset.scss';
+@import './mixins.scss';
+@import './variables.scss';
+@import './hamburger.scss';
+@import './chat-animation.scss';
+@import './buttons.scss';
+@import './call-to-action.scss';
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: $font-primary;
+}
+
+h1 {
+    font-weight: 700;
+    text-rendering: optimizeLegibility;
+}
+
+h2 {
+    font-family: $font-condensed;
+    font-size: 2.3rem;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-family: $font-condensed;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+.hide {
+    display: none;
+}
+
+.navigation {
+    position: absolute;
+    top: 0;
+    height: 70px;
+    margin: 0 auto;
+    display: flex;
+    padding: 3rem 0;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 980px;
+    padding: 0 1rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 1;
+
+    @include screen--lg-up($withoutSuffix: true) {
+        padding: 0;
+    }
+
+    &__logo {
+        display: block;
+        padding: 1rem 0 0;
+    }
+
+    &__item {
+        font-family: $font-primary;
+        margin: 0 0 0 1rem;
+        color: $color-primary-contrast;
+        text-decoration: none;
+    }
+}
+
+.header-bg {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    &__container {
+        position: absolute;
+        overflow: hidden;
+        width: 100%;
+        height: 590px;
+        z-index: -1;
+        background: rgb(87,139,161);
+        background: linear-gradient(193deg, rgba(87,139,161,1) 0%, rgba(71,116,159,1) 100%);
+
+    }
+}
+
+.headline {
+    font-family: $font-primary;
+    font-weight: 700;
+    color: $color-primary-contrast;
+    padding: 1rem 1rem 1rem 0;
+    margin-bottom: 0;
+
+    &--header {
+        font-size: 2rem;
+    text-transform: uppercase;
+    }
+}
+
+.subheadline {
+    font-family: $font-primary;
+    font-size: 18px;
+    color: $color-primary-contrast;
+    line-height: 1.4;
+}
+
+.content-wrapper {
+    width: 100%;
+    max-width: 980px;
+    padding: 0 1rem;
+    margin: 0 auto;
+
+    @include screen--lg-up($withoutSuffix: true) {
+        padding: 0;
+    }
+}
+
+.carousel-item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    max-width: 680px;
+    margin: 0.5rem auto;
+    padding: 1rem;
+    text-align: center;
+    min-height: 250px;
+
+    @include screen--md-up($withoutSuffix: true) {
+        flex-direction: row;
+    }
+}
+
+.content-reference {
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.reference-author {
+    font-family: $font-primary;
+}
+
+.reference-image {
+    max-width: 160px;
+
+    @include screen--md-up($withoutSuffix: true) {
+        width: 120px;
+    }
+}
+
+.content {
+    margin: 1rem auto;
+
+    @include screen--md-up($withoutSuffix: true) {
+        margin: 3rem auto;
+    }
+
+    &--full-width {
+        margin: 0 calc(50% - 50vw);
+        width: 100vw;    
+    }
+
+    &--grey {
+        background-color: $color-grey;
+    }
+
+    &--alt-color {
+        background-color: $color-blue;  
+        color: $color-primary-contrast;
+    }
+
+    &-headline {
+        font-family: $font-primary;
+        padding: 1rem;
+        margin-bottom: 0;
+        line-height: 1.2;
+        font-size: 26px;
+        font-weight: 700;
+
+        &--no-padding-right{
+            padding: 1rem 1rem 1rem 0;
+        }
+    }
+
+    &-fact {
+        max-width: 680px;
+        margin: 0.5rem auto;
+        font-family: $font-primary;
+        font-weight: 700;
+        font-size: 1.2rem;
+        padding: 1rem;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    &-reference {
+        font-family: $font-primary;
+        font-weight: 700;
+        font-size: 1.2rem;
+        padding: 1rem;
+        line-height: 1.4;
+    }
+
+    &-title {
+        font-family: $font-secondary;
+        font-size: 3.2rem;
+        text-align: center;
+        padding-top: 1.5rem;
+
+        &:after {
+            content: '';
+            height: 7px;
+            width: 133px;
+            background-color: $color-accent-alt;
+            display: block;
+            margin: 1rem auto;
+        }
+    }
+
+    &-description {
+        font-family: $font-primary;
+    }
+
+    &-image {
+        position: relative;
+    }
+
+    &-icon {
+        width: 120px;
+        display: block;
+        margin: 0 auto;
+
+        &--autow {
+            @include screen--md-up($withoutSuffix: true) {
+                width: auto;
+            }
+        }
+    }
+
+    &__icon-description {
+        background: #F6F4EF;
+        position: relative;
+        font-family: $font-primary;
+        top: -2rem;
+        z-index: -1;
+        padding-top: 2rem;
+        font-size: 16px;
+    }
+
+    &__flex-col {
+        display: flex;
+        flex-wrap: wrap;
+
+        @include screen--md-up($withoutSuffix: true) {
+            flex-wrap: nowrap;
+        }
+
+        &--centered{
+            align-items: center;
+        }
+    }
+
+    &__flex {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include screen--md-up($withoutSuffix: true) {
+            flex-direction: row;
+        }
+    }
+
+    &__col {
+        flex: 1;
+        padding: 1rem;
+    }
+
+    &__item {
+        flex: 1;
+        margin: 0.5rem 2rem;
+        text-align: center;
+
+        @include screen--md-up($withoutSuffix: true) {
+            margin: 1rem;
+        }
+    }
+}
+
+.footer-bg {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    &__container {
+        position: absolute;
+        overflow: hidden;
+        width: 100%;
+        height: 670px;
+        z-index: -1;
+    }
+}
+
+.footer {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 980px;
+    font-family: $font-primary;
+    color: $color-primary-contrast;
+    padding: 2rem 1rem 0;
+    background: #304E76;
+
+    @include screen--md-up($withoutSuffix: true) {
+        display: flex;
+        padding: 7rem 1rem 0;
+        background: none;
+    }
+
+    @include screen--lg-up($withoutSuffix: true) {
+        padding: 7.5rem 0 0;
+    }
+
+    a {
+        color: $color-primary-contrast;
+    }
+
+    &__description {
+        margin: 0 auto;
+    }
+
+    &__col {
+        flex: 1;
+        padding: 1rem;
+    }
+
+    &__header{
+        font-family: $font-primary;
+        font-weight: 700;
+        margin: 1rem 0;
+    }
+}
+
+.video {
+    padding: 3rem 0 0;
+
+    @include screen--md-up($withoutSuffix: true) {
+        padding: 3rem 0 0;
+    }
+
+    iframe {
+        border-radius: 1rem;
+    }
+}
+
+.offer {
+    border-radius: 2rem;
+    margin-top: 1rem;
+
+    @include screen--md-up($withoutSuffix: true) {
+        margin-top: 2rem;
+    }
+}
+
+.dot-pattern {
+    background-color: #e5e5f7;
+    opacity: 0.8;
+    background-image:  radial-gradient(#CDCDCD 0.5px, transparent 0.5px), radial-gradient(#CDCDCD 0.5px, #e5e5f7 0.5px);
+    background-size: 20px 20px;
+    background-position: 0 0,10px 10px;
+}
+
+.arrow-box {
+	position: relative;
+	background: $color-grey;
+	border: 2px solid #fff;
+    color: black;
+}
+.arrow-box:after, .arrow-box:before {
+	left: 100%;
+	top: 50%;
+	border: solid transparent;
+	content: "";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.arrow-box:after {
+	border-color: rgba(101, 157, 164, 0);
+	border-left-color: $color-grey;
+	border-width: 10px;
+	margin-top: -10px;
+}
+.arrow-box:before {
+	border-color: rgba(245, 245, 245, 0);
+	border-left-color: #fff;
+	border-width: 13px;
+	margin-top: -13px;
+}
+
+.credit-link {
+	padding: 1rem 0;
+    font-size: 0.6rem;
+    
+    a {
+        color: #74adce;
+    }
+}
+
+// Carousel specific styling
+
+.carousel.carousel-slider .control-arrow {
+    padding: 25px!important;
+}
+
+
+// Lightbox specific styling
+
+.SRLCaptionContainer,
+.SRLCaptionText,
+.SRLThumbnailsContainer,
+.SRLNextButton,
+.SRLPrevButton,
+.SRLAutoplayButton {
+    display: none!important;
+}
+
+.cursor-hover {
+    cursor: zoom-in;
+}

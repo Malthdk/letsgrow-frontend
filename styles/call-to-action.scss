@@ -1,0 +1,32 @@
+.header-button-active {
+    position: relative;
+    width: 330px;
+    height: 38px;
+    top: 0;
+    left: 0;
+    text-align: center;
+    //transition: all 0.9s;
+    //transform: translate(0, 0);
+}
+
+.c2a-button-active {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 98%;
+    top: 98%;
+    width: 68px;
+    height: 68px;    
+    transition: all 0.9s;
+    transform: translate(-98%, -98%);
+    border-radius: 50%;
+    z-index: 20;
+    //animation: changePos 1s 0.3s ease-out forwards;
+}
+
+@keyframes changePos {
+    to {
+      position: fixed;
+    }
+  }
