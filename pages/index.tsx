@@ -9,7 +9,7 @@ import ContentField from "../components/contentField"
 import Profit from "../components/profit"
 import Service from "../components/service"
 import Partners from "../components/partners"
-// import ReferenceCarousel from "../components/references"
+import References from "../components/references";
 
 export async function getStaticProps() {
   // Run API calls in parallel
@@ -38,13 +38,13 @@ const IndexPage = ({header, contents, partnersList, profit, service, seo}: any) 
   <Layout header={header} >
     <Seo seo={seo} />
   <Profit profit={profit} />
+  <References />
   <Service service={service} />
     {contents.map((content: any, index: number) => {
       return (
         <ContentField key={index} content={content} />
       )
     })}
-    {/* <ReferenceCarousel />*/}
     <Partners partnersList={partnersList}/>
   </Layout>
 )

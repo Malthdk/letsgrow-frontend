@@ -13,6 +13,7 @@
     text-decoration: none;
     margin: 0 auto;    
     font-family: $font-primary;
+    font-weight: 700;
 
     @include screen--md-up($withoutSuffix: true) {
         margin: 0;

@@ -13,8 +13,8 @@ const Service = ({ service }: any) => (
               <Image
                 src={service.attributes.service_1_image.data.attributes.url}
                 alt={service.attributes.service_1_image.data.attributes.alternativeText}
-                width={service.attributes.service_1_image.data.attributes.width}
-                height={service.attributes.service_1_image.data.attributes.height}
+                width={120}
+                height={120}
               />
             }
           </a>
@@ -30,8 +30,8 @@ const Service = ({ service }: any) => (
               <Image
                 src={service.attributes.service_2_image.data.attributes.url}
                 alt={service.attributes.service_2_image.data.attributes.alternativeText}
-                width={service.attributes.service_2_image.data.attributes.width}
-                height={service.attributes.service_2_image.data.attributes.height}
+                width={120}
+                height={120}
               />
             }
           </a>
@@ -47,8 +47,8 @@ const Service = ({ service }: any) => (
               <Image
                 src={service.attributes.service_3_image.data.attributes.url}
                 alt={service.attributes.service_3_image.data.attributes.alternativeText}
-                width={service.attributes.service_3_image.data.attributes.width}
-                height={service.attributes.service_3_image.data.attributes.height}
+                width={120}
+                height={120}
               />
             }
           </a>
@@ -64,8 +64,8 @@ const Service = ({ service }: any) => (
               <Image
                 src={service.attributes.service_4_image.data.attributes.url}
                 alt={service.attributes.service_4_image.data.attributes.alternativeText}
-                width={service.attributes.service_4_image.data.attributes.width}
-                height={service.attributes.service_4_image.data.attributes.height}
+                width={120}
+                height={120}
               />
             }
           </a>
