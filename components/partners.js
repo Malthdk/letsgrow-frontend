@@ -8,9 +8,9 @@ const Partners = ({ partnersList }) => {
             <h2 className="content-headline">Samarbejdspartnere</h2>
             <div className="content__flex-col content__flex-col--centered content--full-width">
                 {partnersList &&
-                    partnersList.attributes.partner.map((partner) => {
+                    partnersList.attributes.partner.map((partner, index) => {
                         return (
-                            <div className="content__item content-icon--autow">
+                            <div className="content__item content-icon--autow" key={index}>
                                 <a href={partner.partner_link} target="_blank" rel="noreferrer">
                                     <div className="content-icon">
                                         {
