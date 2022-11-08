@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "netlify:build": "next build",
+    "netlify:build": "next build --debug",
     "start": "next start",
     "lint": "next lint"
   },
