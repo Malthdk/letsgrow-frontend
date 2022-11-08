@@ -34,13 +34,19 @@ export async function fetchAPI(path: string, urlParamsObject = {}, options = {})
   )}`;
 
   // Trigger API call
-  const response = await fetch(requestUrl, mergedOptions);
+  try {
+    const response = await fetch(requestUrl, mergedOptions);
   
-  // Handle response
-  if (!response.ok) {
-    console.error(response.statusText);
-    throw new Error(`An error occured please try again`);
+    // Handle response
+    if (!response.ok) {
+      console.error(response.statusText);
+      throw new Error(`An error occured please try again`);
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.log(error);
+    return null;
   }
-  const data = await response.json();
-  return data;
+  
 }
