@@ -38,6 +38,18 @@ h3 {
     display: none;
 }
 
+.reference-video {
+    -webkit-mask-image: radial-gradient(circle, black 50%, rgba(0, 0, 0, 0) 50%);
+    mask-image: radial-gradient(circle, black 50%, rgba(0, 0, 0, 0) 50%);
+    transition: all 0.2s;
+}
+
+[data-isplaying="true"] {
+    -webkit-mask-image: radial-gradient(circle, black 50%, rgba(0, 0, 0, 1) 50%);
+    mask-image: radial-gradient(circle, black 50%, rgba(0, 0, 0, 1) 50%);
+    transform: translateY(1,2);
+}
+
 .navigation {
     position: absolute;
     top: 0;

@@ -5,7 +5,7 @@ import classNames from 'classnames';
 const ContentField = ({ content }) => {
     return (<Content fullWidth={content.attributes.full_width}>
         <div className="content">
-            <h1 id="modebooking" className="content-title">
+            <h1 id={content.attributes.anchor_link} className="content-title">
                 {content.attributes.title}
             </h1>
             <h2 className="content-headline">

@@ -4,8 +4,6 @@ import { fetchAPI } from "../lib/api";
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import ContentField from "../components/contentField"
-// import How from "../components/how"
-// import What from "../components/what"
 import Profit from "../components/profit"
 import Service from "../components/service"
 import Partners from "../components/partners"
@@ -13,13 +11,14 @@ import References from "../components/references";
 
 export async function getStaticProps() {
   // Run API calls in parallel
-  const [headerRes, contentRes, partnersRes, profitRes, serviceRes, globalRes] = await Promise.all([
+  const [headerRes, contentRes, partnersRes, profitRes, serviceRes, globalRes, referencesRes] = await Promise.all([
     fetchAPI("/header"),
     fetchAPI("/contents", {populate: "*", sort: "id"}),
     fetchAPI("/partnerslist", {populate: "partner.partner_image"}),
     fetchAPI("/profit"),
     fetchAPI("/service", {populate: "*"}),
     fetchAPI("/global", {populate: "*"}),
+    fetchAPI("/referencelist", {populate: ["reference.image", "reference.video"]}),
   ]);
 
   return {
@@ -30,15 +29,16 @@ export async function getStaticProps() {
       profit: profitRes.data,
       service: serviceRes.data,
       seo: globalRes.data,
+      references: referencesRes.data
     }
   };
 }
 
-const IndexPage = ({header, contents, partnersList, profit, service, seo}: any) => (
+const IndexPage = ({header, contents, partnersList, profit, service, seo, references}: any) => (
   <Layout header={header} >
     <Seo seo={seo} />
   <Profit profit={profit} />
-  <References />
+  <References references={references} />
   <Service service={service} />
     {contents.map((content: any, index: number) => {
       return (

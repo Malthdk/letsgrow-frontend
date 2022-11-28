@@ -23,6 +23,7 @@ const Seo = ({ seo }) => {
           <meta property="og:image" content={seo.attributes.share_image.data.attributes.url} />
           <meta name="twitter:image" content={seo.attributes.share_image.data.attributes.url} />
           <meta name="image" content={seo.attributes.share_image.data.attributes.url} />
+          <meta itemProp="image primaryImageOfPage" content={seo.attributes.share_image.data.attributes.url} />
         </>
       )}
       <meta name="twitter:card" content="summary_large_image" />

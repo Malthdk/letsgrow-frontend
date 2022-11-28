@@ -2,7 +2,6 @@ import * as React from "react"
 import Image from 'next/image';
 
 const Partners = ({ partnersList }) => {
-    console.log(partnersList)
     return (
         <div className="content">
             <h2 className="content-headline">Samarbejdspartnere</h2>

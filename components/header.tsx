@@ -21,8 +21,8 @@ const Header = ({ header }: any) => {
       <header className="max-w-screen-lg w-full mx-auto">
         <Navigation />
         <div className="flex p-2 flex-col md:flex-row md:h-[500px] items-center ">
-        <div className="pr-4 md:w-[85%] pt-4 md:pt-0">
-          <div  dangerouslySetInnerHTML={{ __html: header.attributes.headline}}></div>
+        <div className="pr-4 md:w-[75%] pt-4 md:pt-0">
+          <div dangerouslySetInnerHTML={{ __html: header.attributes.headline}}></div>
 
           <a className={`button call-to-action-btn ${inView ? "header-button-active" : "c2a-button-active"}`} href="https://outlook.office365.com/owa/calendar/LETSGROW@letsgrow.sale/bookings/" target="_blank" rel="noreferrer">
             <span className={`button-text ${inView ? "" : "hide"}`}>{header.attributes.button}</span>
@@ -32,7 +32,7 @@ const Header = ({ header }: any) => {
           <div ref={ref}></div>
 
         </div>
-        <div className="md:w-[45%]">
+        <div className="md:w-[75%]">
           <Video
             videoSrcURL="https://www.youtube.com/embed/WjBZlUaVemY?autoplay=1&mute=1&cc_load_policy=1&rel=0&modestbranding=1"
             videoTitle="LetsGROW intro video"
