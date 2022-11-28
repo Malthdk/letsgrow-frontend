@@ -35,10 +35,10 @@ const ReferenceItem = ({ data }: ReferenceItemProps) => {
                 </div>
             }
 
-            <div className="relative z-20 rounded-md bg-slate-50  mt-[-3rem] text-black pt-16 p-4">
+            <div className="relative z-20 rounded-md bg-slate-50 mt-[-3rem] text-black pt-16 p-4">
                 <h4 className="text-center mb-2">{data.name}</h4>
                 <h5 className="text-center mb-4">{data.company_name}</h5>
-                <p className="mb-2" dangerouslySetInnerHTML={{ __html: data.text}}></p>
+                <div className="mb-2" dangerouslySetInnerHTML={{ __html: data.text}}></div>
             </div>
         </div>)
 }
@@ -48,8 +48,8 @@ const References = ({ references }: any) => {
         <div className="content content--full-width content--alt-color">
             <h1 className="content-title text-center">{references.attributes.title}</h1>
 
-            <div className="max-w-2xl w-full mx-auto flex items-center">
-                <Carousel autoPlay={false} showIndicators={true} showThumbs={false} showStatus={false} interval={8000}>
+            <div className="max-w-[420px] w-full mx-auto">
+                <Carousel autoPlay={false} showIndicators={true} showThumbs={false} showStatus={false} interval={8000} width={420}>
                     {references.attributes.reference &&
                         references.attributes.reference.map((refItem: any, index: number) => {
                             return <ReferenceItem data={refItem} key={index} />
