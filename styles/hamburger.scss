@@ -128,7 +128,7 @@ $color-accent-alt: #95C594;
    position: absolute;
    width: 100vw;
    top: -510px;
-   right: -16px;
+   right: -8px;
    padding: 50px;
    padding-top: 125px;
    
@@ -145,7 +145,7 @@ $color-accent-alt: #95C594;
  
    @include screen--md-up($withoutSuffix: true) {
     width: 300px;
-    right: -20px;
+    right: -8px;
 }
   }
  

@@ -48,8 +48,8 @@ const References = ({ references }: any) => {
         <div className="content content--full-width content--alt-color">
             <h1 className="content-title text-center">{references.attributes.title}</h1>
 
-            <div className="max-w-[420px] w-full mx-auto">
-                <Carousel autoPlay={false} showIndicators={true} showThumbs={false} showStatus={false} interval={8000} width={420}>
+            <div className="max-w-[440px] w-full mx-auto">
+                <Carousel autoPlay={false} showIndicators={true} showThumbs={false} showStatus={false} interval={8000}>
                     {references.attributes.reference &&
                         references.attributes.reference.map((refItem: any, index: number) => {
                             return <ReferenceItem data={refItem} key={index} />

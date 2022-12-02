@@ -5,7 +5,7 @@ const Partners = ({ partnersList }) => {
     return (
         <div className="content">
             <h2 className="content-headline">Samarbejdspartnere</h2>
-            <div className="content__flex-col content__flex-col--centered content--full-width">
+            <div className="content__flex-col content__flex-col--centered content--full-width md:overflow-x-auto">
                 {partnersList &&
                     partnersList.attributes.partner.map((partner, index) => {
                         return (
