@@ -115,6 +115,7 @@ const References = ({ references }: any) => {
                 <SwipeableViews
                     index={activeStep}
                     onChangeIndex={handleStepChange}
+                    disableLazyLoading
                     enableMouseEvents>
                     {references.attributes.reference &&
                         isMobile ? references.attributes.reference.map((refItem: any, index: number) => (<ReferenceItem data={refItem} key={index} />)) :
