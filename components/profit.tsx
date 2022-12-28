@@ -2,7 +2,7 @@ import * as React from "react"
 
 const Profit = ({profit}: any) => (
     <div className="content offer">
-      <h2 className="content-headline">Typisk udbytte pr måned</h2>
+      <h2 className="content-headline">Typisk udbytte pr måned for tech virksomheder</h2>
       <div className="content__flex-col">
         <div className="content__item">
         <div className="w-[120px] h-[120px] rounded-full bg-[#f5f4f0] m-auto flex items-center justify-center font-bold text-2xl">

@@ -8,6 +8,23 @@ const Service = ({ service }: any) => (
     <div className="content__flex-col">
       <div className="content__item">
         <div className="content-icon">
+          <a href={service.attributes.service_3_link}>
+            {service.attributes.service_3_image.data &&
+              <Image
+                src={service.attributes.service_3_image.data.attributes.url}
+                alt={service.attributes.service_3_image.data.attributes.alternativeText}
+                width={120}
+                height={120}
+              />
+            }
+          </a>
+        </div>
+        <div className="content-headline content__icon-description">
+          {service.attributes.service_3}
+        </div>
+      </div>
+      <div className="content__item">
+        <div className="content-icon">
           <a href={service.attributes.service_1_link}>
             {service.attributes.service_1_image.data &&
               <Image
@@ -38,23 +55,6 @@ const Service = ({ service }: any) => (
         </div>
         <div className="content-headline content__icon-description">
           {service.attributes.service_2}
-        </div>
-      </div>
-      <div className="content__item">
-        <div className="content-icon">
-          <a href={service.attributes.service_3_link}>
-            {service.attributes.service_3_image.data &&
-              <Image
-                src={service.attributes.service_3_image.data.attributes.url}
-                alt={service.attributes.service_3_image.data.attributes.alternativeText}
-                width={120}
-                height={120}
-              />
-            }
-          </a>
-        </div>
-        <div className="content-headline content__icon-description">
-          {service.attributes.service_3}
         </div>
       </div>
       <div className="content__item">

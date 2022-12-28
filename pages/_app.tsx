@@ -1,5 +1,4 @@
 import '../styles/tailwind.css'
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import '../styles/main.scss'
 import App from "next/app";
 import Head from "next/head";

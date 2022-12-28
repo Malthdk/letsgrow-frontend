@@ -37,14 +37,14 @@ export async function getStaticProps() {
 const IndexPage = ({header, contents, partnersList, profit, service, seo, references}: any) => (
   <Layout header={header} >
     <Seo seo={seo} />
-  <Profit profit={profit} />
-  <References references={references} />
   <Service service={service} />
+  <References references={references} />
     {contents.map((content: any, index: number) => {
       return (
         <ContentField key={index} content={content} />
       )
     })}
+  <Profit profit={profit} />
     <Partners partnersList={partnersList}/>
   </Layout>
 )
