@@ -33,6 +33,7 @@ const ReferenceItem = ({ data }: ReferenceItemProps) => {
                         alt="text"
                         width={100}
                         height={100}
+                        priority={true}
                         className="mb-0 rounded-full border-white border-solid border-2" />
                 </div>
             }
@@ -115,7 +116,8 @@ const References = ({ references }: any) => {
                 <SwipeableViews
                     index={activeStep}
                     onChangeIndex={handleStepChange}
-                    disableLazyLoading
+                    disableLazyLoading={true}
+                    slideStyle={{overflowY: "hidden"}}
                     enableMouseEvents>
                     {references.attributes.reference &&
                         isMobile ? references.attributes.reference.map((refItem: any, index: number) => (<ReferenceItem data={refItem} key={index} />)) :
