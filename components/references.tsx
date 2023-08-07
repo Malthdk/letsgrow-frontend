@@ -46,7 +46,7 @@ const ReferenceItem = ({ data }: ReferenceItemProps) => {
                         {!isPlaying &&
                             <Icon className="absolute z-20 text-white text-5xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer" onClick={handlePlayVideo} icon="material-symbols:play-circle-outline" />
                         }
-                        <video ref={vidRef} id="video" width="220" height={200} className={classNames(isPlaying ? "" : "pointer-events-none", "mx-auto w-full")} controls>
+                        <video ref={vidRef} id="video" width="220" height={200} className={classNames(isPlaying ? "" : "pointer-events-none", "mx-auto w-full")} controls {...(data.poster && data.poster.data ? {poster: data.poster.data.attributes.url} : {})}>
                             <source src={data.video.data.attributes.url} type={data.video.data.attributes.mime} />
                         </video>
                     </div>
