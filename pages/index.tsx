@@ -18,7 +18,7 @@ export async function getStaticProps() {
     fetchAPI("/profit"),
     fetchAPI("/service", {populate: "*"}),
     fetchAPI("/global", {populate: "*"}),
-    fetchAPI("/referencelist", {populate: ["reference.image", "reference.video"]}),
+    fetchAPI("/referencelist", {populate: ["reference.image", "reference.video", "reference.poster"]}),
   ]);
 
   return {
@@ -39,12 +39,12 @@ const IndexPage = ({header, contents, partnersList, profit, service, seo, refere
     <Seo seo={seo} />
   <Service service={service} />
   <References references={references} />
+  <Profit profit={profit} />
     {contents.map((content: any, index: number) => {
       return (
         <ContentField key={index} content={content} />
       )
     })}
-  <Profit profit={profit} />
     <Partners partnersList={partnersList}/>
   </Layout>
 )
